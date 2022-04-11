@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <title>Hamming (7, 4)</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Overview</h2>
+      <p>
+        This project RAID 2 by separating a text file into seven encoded text
+        files. The seven files represent seven drives which would contain the
+        encoded data. RAID 2 uses hamming codes to encode and decode. If one
+        drive (text file) is corrupted, the program can still decode and
+        reconstruct the original file.
+      </p>
+      <center>
+        <a href="https://github.com/jpb93/hamming-7-4">Code</a>
+      </center>
+    </div>
+    <div class="container">
+      <h2>Details</h2>
+      <h3>RAID 2</h3>
+      <p>
+        RAID (Redundant Array of Inexpensive Disks) is a class of I/O devices
+        which have been used to improve disk performance and reliability. It was
+        first proposed by D.A. Patterson in a
+        <a href="https://www.cs.cmu.edu/~garth/RAIDpaper/Patterson88.pdf"
+          >1988 paper</a
+        >
+        analyzing the performance of CPUs versus disks. "Inexpensive" was later
+        renamed "independent." RAID implementations worked by distrubuting data
+        across several drives. The seven standard RAID configurations are
+        referred to today as RAID level 0 through RAID level 6.
+      </p>
+      <p>
+        RAID 2 in particular uses the hamming (7, 4) code in order to split a
+        byte into a pair of 4-bit nibbles. From here, each nibble is then
+        encoded into a 7-bit code word, with parity bits 1, 2, and 4. Each drive
+        then recieves a single bit. The following image is from "Modern
+        Operating Systems" by Andrew Tanenbaum and Herbert Bos.
+      </p>
+      <img src="./img/raid2.png" alt="" />
+      <h3>Hamming Codes</h3>
+      <p>
+        One of the best explainations of hamming codes I have ever seen is Grant
+        Sanderson's video
+        <a href="https://www.youtube.com/watch?v=X8jsijhllIA">here</a>. The
+        basic idea is that we can encode a message to tell us not only if an
+        error occured, but also where that error occured. To do this, we take
+        each of our four-bit nibbles and add three parity bits. 
+      </p>
+      <pre>
+        <code>
+          Position: 1  2  3  4  5  6  7
+          Bit:      P1 P2 D1 P4 D2 D3 D4
+        </code>
+      </pre>
+      <p>
+        The parity bits, P1, P2, and P4, are calculated by taking the
+        exclusive-or for certain groups of non-parity bits.
+      </p>
+      <pre>
+        <code>
+          P1 = D1 XOR D2 XOR D4
+          P2 = D1 XOR D3 XOR D4
+          P4 = D2 XOR D3 XOR D4
+        </code>
+      </pre>
+      <p>
+        For example, encoding the number 6 would give us a hamming code of
+        <code>1100110</code>. Each of these bits would then be placed in one of
+        the seven drives.
+      </p>
+      <p>
+        Encoding the message <code>0x61626364</code> would give us the
+        following.
+      </p>
+      <pre>
+        <code>
+          1 1 0 0 1 1 0
+          1 1 0 1 0 0 1
+          1 1 0 0 1 1 0
+          0 1 0 1 0 1 0
+          1 1 0 0 1 1 0
+          1 0 0 0 0 1 1
+          1 1 0 0 1 1 0
+          1 0 0 1 1 0 0
+        </code>
+      </pre>
+      <p>
+        Which means that the drives would contain the bytes
+        <code>0xEF, 0xFA, 0x00, 0x51, 0xAB, 0xBE, 0x44</code>.
+      </p>
+      <p>
+        Decoding a message involves taking the exclusive-or of original four
+        bits along with their parity bits. The three bit number which results
+        from this calculation will then show where the error occured. If no
+        error occured, the result will be zero.
+      </p>
+      <pre>
+        <code>
+          C1 = P1 XOR D1 XOR D2 XOR D4
+          C2 = P2 XOR D1 XOR D2 XOR D4
+          C4 = P4 XOR D2 XOR D3 XOR D4
+        </code>
+      </pre>
+      <p>
+        If, for example, our bit 2 was flipped in our original example of 6, it
+        would look like <code>1000110</code>. Doing the above operation would
+        result in the following information.
+      </p>
+      <pre>
+        1 XOR 0 XOR 1 XOR 0 = 0
+        0 XOR 0 XOR 1 XOR 0 = 1
+        0 XOR 1 XOR 1 XOR 0 = 0
+      </pre>
+      <p>
+        Which tells us our error is at position <code>010</code>, which is
+        binary for 2.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script
+      type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    ></script>
+    <title>Bad Sorting</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Overview</h2>
+      <p>
+        This was an early attempt to write a program that could vizualize
+        comparison-based sorting algorithms. It supports three of the
+        $\displaystyle{O(n^2)}$ sorting algorithms: bubble sort, insertion sort,
+        and selection sort. It technically implements bogosort as well, which
+        runs in $\displaystyle{O((n + 1)!)}$. To achieve this, click the reset
+        button until the entire array is sorted. If you did not get the joke, click
+        <a href="https://en.wikibooks.org/wiki/Algorithm_Implementation/Sorting/Bogosort">here</a> 
+        to read about the amazing bogosort.
+      </p>
+      <center>
+        <a href="https://jpb93.github.io/BadSorting/">Demo</a> |
+        <a href="https://github.com/jpb93/BadSorting">Code</a>
+      </center>
+    </div>
+    <div class="container">
+      <h2>Details</h2>
+      <p>
+        This was one of the first JavaScript projects I worked on when I was
+        learning it for the first time. Everything was naively placed in a
+        single index.html file, and I have chose to keep it that way as a
+        reminder of those days.
+      </p>
+      <p>
+        I was inspired by many of the sorting algorithm videos found on YouTube,
+        such as
+        <a href="https://www.youtube.com/watch?v=kPRA0W1kECg"
+          >this one (seizure warning)</a
+        >. Unfortunately (or fortunately, depending on your perspective), my
+        project does not make any noise.
+      </p>
+      <img src="./img/badsortingdefault.png" alt="" />
+      <p>
+        The implementation uses the HTML canvas API to draw rectangles on the
+        screen based upon randomly shuffled values of an array. The sort
+        functions then call an update function which re-draws the canvas every
+        time an element is swapped. By making the functions async, I was able to change the rate
+        at which the swaps occured. The user can see this by changing the "Sort Speed" slider.
+      </p>
+    </div>
+  </body>
+</html>

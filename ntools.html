@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <title>N-Tools-Browser</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Overview</h2>
+      <p>
+        N-Tools-Browser is a web-based neuroimaging tool developed with the
+        <a href="https://github.com/xtk/X">X-Toolkit (XTK)</a>. XTK was
+        developed by <a href="https://danielhaehn.com/">Dr. Daniel Haehn</a> and
+        is built upon WebGL, which allows 3D rendering in web applications.
+      </p>
+      <center>
+        <a href="https://ntoolsbrowser.github.io/">Demo</a> |
+        <a href="https://github.com/ntoolsbrowser/ntoolsbrowser.github.io"
+          >Code</a
+        >
+      </center>
+      <p>
+        Load subjects "fsaverage" or "fsMNI" in UMB mode to view samples.
+        Misalignment of electrodes is due to the data being having been randomly
+        generated to protect patient confidentiality.
+      </p>
+    </div>
+    <div class="container">
+      <h2>Details</h2>
+      <p>
+        N-Tools-Browser is a development of a project first conceptualized by
+        <a href="https://med.nyu.edu/faculty/jingyun-chen"
+          >Dr. Jingyun "Josh" Chen</a
+        >
+        and
+        <a href="https://nyulangone.org/doctors/1407900152/daniel-friedman"
+          >Dr. Daniel Friedman</a
+        >
+        at New York University. The goal was to create a browser application for
+        clinical researchers and epilepsy specialists to vizualize electrode
+        data on a 3D brain surface and 2D MRI scans. Our team developed the
+        prototype with members of the
+        <a href="https://mpsych.org/">Machine Psyschology</a> group at The
+        University of Massachusetts, Boston.
+      </p>
+      <img src="./img/ntools-fullui.png" alt="N-Tools-Browser main sceen" />
+      <p>
+        At this time, N-Tools supports reading and updating electrode data from
+        a JSON file. The 2D MRI scans are loaded from
+        <a href="https://radiopaedia.org/articles/nifti-file-format?lang=us"
+          >NIfTI</a
+        >
+        files, and the 3D hemispheres are
+        <a
+          href="https://surfer.nmr.mgh.harvard.edu/fswiki/FreeSurferWiki/SurfaceNormal"
+          >FreeSurfer meshes</a
+        >. The user can then toggle between different seizure type views, select
+        electrodes, either by clicking or using a menu, and display connections
+        between electrodes.
+      </p>
+      <p>
+        Our team is also beginning to work on new functionality for editing
+        electrodes, and displaying electrode signal over time. We are also
+        implementing a standard JSON format which will be compliant with the
+        <a
+          href="https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html"
+          >Brain Imaging Data Structure (BIDS)</a
+        >
+        standard for storing and describing neuroimaging data.
+      </p>
+      <p>The other contributors to N-Tools can be found here.</p>
+      <div>
+          <div>
+            Ana Gorohovschi (
+            <a href="https://www.linkedin.com/in/ana-gorohovschi-87157b60/"
+              >LinkedIn</a
+            >
+            | <a href="https://github.com/Aniuta78">GitHub</a> )
+          </div>
+          <div>
+            Aaryaman Sharma (
+            <a href="https://www.linkedin.com/in/aaryamansharma/">LinkedIn</a> |
+            <a href="https://github.com/aaryaman11">GitHub</a> )
+          </div>
+          <div>
+            Jack Tan (
+            <a href="https://www.linkedin.com/in/jack-tan-001/">LinkedIn</a> |
+            <a href="https://github.com/jztan93">GitHub</a> )
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+* {
+  font-size: 20px;
+}
+
+.background {
+  background-image: url("./img/central-PA.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* object-fit: cover; */
+  min-height: 50%;
+  padding: 1em;
+  color: white;
+}
+
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 0.5em;
+  padding-right: 3em;
+  padding-left: 3em;
+  padding-bottom: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.sub-heading {
+  display: flex;
+  justify-content: center;
+}
+.project-link {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+}
