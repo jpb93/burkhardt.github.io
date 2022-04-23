@@ -57,7 +57,7 @@
         priority value.
       </p>
       <p>
-        This initial prioirity can be changed which results in very different
+        This initial priority can be changed which results in very different
         behavior. Once a piece is placed, the heuristic function looks at all
         the pieces, both player and computer, to assign the board a rating.
         Positive values are assigned to computer moves, and negative values are
@@ -85,10 +85,10 @@
         this, it keeps track two values, alpha and beta, which initially
         represent the worst possible score for the maximizing and minimizing
         players, respectively. These are values are updated during the search
-        until either is gaurunteed a certain score, which happens when beta <
+        until either is guaranteed a certain score, which happens when beta <
         alpha for the maximizing player. The computer then need not check any
         further depth for a node, since the scores cannot change the score it is
-        gaurnteed to have.
+        guaranteed to have.
       </p>
       <p>
         With pruning, the mini-max algorithm can achieve a best-case time

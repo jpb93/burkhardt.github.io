@@ -36,7 +36,7 @@
           >1988 paper</a
         >
         analyzing the performance of CPUs versus disks. "Inexpensive" was later
-        renamed "independent." RAID implementations worked by distrubuting data
+        renamed "independent." RAID implementations worked by distributing data
         across several drives. The seven standard RAID configurations are
         referred to today as RAID level 0 through RAID level 6.
       </p>
@@ -44,17 +44,17 @@
         RAID 2 in particular uses the hamming (7, 4) code in order to split a
         byte into a pair of 4-bit nibbles. From here, each nibble is then
         encoded into a 7-bit code word, with parity bits 1, 2, and 4. Each drive
-        then recieves a single bit. The following image is from "Modern
+        then receives a single bit. The following image is from "Modern
         Operating Systems" by Andrew Tanenbaum and Herbert Bos.
       </p>
       <img src="./img/raid2.png" alt="" />
       <h3>Hamming Codes</h3>
       <p>
-        One of the best explainations of hamming codes I have ever seen is Grant
+        One of the best explanations of hamming codes I have ever seen is Grant
         Sanderson's video
         <a href="https://www.youtube.com/watch?v=X8jsijhllIA">here</a>. The
         basic idea is that we can encode a message to tell us not only if an
-        error occured, but also where that error occured. To do this, we take
+        error occurred, but also where that error occurred. To do this, we take
         each of our four-bit nibbles and add three parity bits. 
       </p>
       <pre>
@@ -102,7 +102,7 @@
       <p>
         Decoding a message involves taking the exclusive-or of original four
         bits along with their parity bits. The three bit number which results
-        from this calculation will then show where the error occured. If no
+        from this calculation will then show where the error occurred. If no
         error occured, the result will be zero.
       </p>
       <pre>
