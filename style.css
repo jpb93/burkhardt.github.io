@@ -1,4 +1,63 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: 'Source Sans Pro', sans-serif;
+  --ff-secondary: 'Source Code Pro', monospace;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #16e0bd;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.255rem;
+  --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--ff-body);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* typography */
+
+
+
+
+
+
+
+
+
+
+
+
+/* * {
   font-size: 20px;
 }
 
@@ -8,7 +67,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  /* object-fit: cover; */
+  /* object-fit: cover; 
   min-height: 50%;
   padding: 1em;
   color: white;
@@ -48,4 +107,4 @@ img {
 
 li {
   list-style: none;
-}
+} */
