@@ -13,7 +13,7 @@
 
   --clr-light: #fff;
   --clr-dark: #303030;
-  --clr-accent: #16e0bd;
+  --clr-accent: #16c8e0;
 
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
@@ -371,6 +371,46 @@ header {
 .portfolio-item {
   background: var(--clr-accent);
   overflow: hidden;
+  position: relative;
+}
+
+.image-overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--clr-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.image-overlay-text > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.image-overlay-text:hover {
+  opacity: 1;
+}
+
+.image-overlay-text:hover > * {
+  transform: translateY(0);
+}
+
+.image-overlay-title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.portfolio-links a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .portfolio-img {
