@@ -10,3 +10,7 @@ navLinks.forEach((link) => {
     document.body.classList.remove('nav-open');
   });
 });
+
+new jBox('Tooltip', {
+  attach: '.tooltip'
+});

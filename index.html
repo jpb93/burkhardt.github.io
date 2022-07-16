@@ -9,84 +9,77 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
-    
-    <script src="https://kit.fontawesome.com/5f9785b521.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.css" rel="stylesheet">
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/StephanWagner/jBox@v1.3.3/dist/jBox.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/5f9785b521.js" crossorigin="anonymous"></script>
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </head>
   <body>
     <header>
-      <!-- <div class="logo">
-        <img src="img/place-holder.jpg" alt="">
-      </div> -->
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
       </button>
       <nav class="nav">
-        <!-- add class nav__list ?-->
         <ul class="nav-list">
-          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About Me</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Skills and Technologies</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">My Work</a></li>
+          <!-- <li class="nav-item"><a href="#" class="nav-link">Home</a></li> -->
+          <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills and Technologies</a></li>
+          <li class="nav-item"><a href="#work" class="nav-link">My Work</a></li>
         </ul>
       </nav>
-    </header>
+    </header> 
 
-    <!-- My introduction -->
+    <section class="about-me" id="about">
+      <h2 class="section-title section-title-about">Jay Burkhardt</h2>
+      <p class="section-subtitle section-subtitle-about">About Me</p>
+
+      <div class="about-me-body">
+        <p>I am a recent computer science graduate from the University of Massachusetts Boston. 
+           My primary interest is the intersection between technology and healthcare. It is my firm 
+           belief that state-of-the-art healthcare should be available to all, and software development 
+           is one of the best ways to accomplish this. This passion of mine lead me to a 10 month collaboration 
+           with <a href="https://nyulangone.org/locations/comprehensive-epilepsy-center"> NYU Langone's 
+           Comprehensive Epilepsy Center</a>, where I helped developed N-Tools-Browser, a 
+           visualization tool for electrocorticography data. A paper summarizing our work can be found 
+          <a href="https://www.frontiersin.org/articles/10.3389/fbinf.2022.857577/full">here</a>.</p>
+
+       <p>Aside from healthcare, I have a wide range of interests including finance, artificial intelligence, 
+          and supply chain logistics. I hope to join a team where I can have measurable real-world impact and grow my skills as
+          a developer. Whether I am designing an intuitive user-interface, performing data analytics, 
+          or optimizing back-end servers, I will be happy to make an impact in any way I can.</p>
+      <a href="#work" class="btn">My Work</a>
+      </div>
+      <img src="img/my-face.jpg" alt="" class="about-me-img">
+    </section>
+
+    <!-- My introduction
     <section class="intro" id="home">
       <h1 class="section-title section-title-intro">
         Hello, my name is <strong>Jay Burkhardt</strong>
       </h1>
       <p class="section-subtitle section-subtitle-intro">Web Developer</p>
       <img src="img/my-face.jpg" alt="" class="intro-img">
-    </section>
+    </section> -->
 
-    <!-- my services (placeholder) -->
-    <section class="my-services" id="services">
-      <h2 class="section-title section-title-services">What I do</h2>
-      <div class="services">
-        <div class="service">
-          <h3>Graphics</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-
-        <div class="service">
-          <h3>Data</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-
-        <div class="service">
-          <h3>Other Stuff</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+    <!-- my skills -->
+    <section class="my-skills" id="skills">
+      <h2 class="section-title section-title-skills">My Skills</h2>
+      <div class="skills">
+        <i class="skill devicon-javascript-plain colored tooltip" title="JavaScript"></i>
+        <i class="skill devicon-typescript-plain colored tooltip" title="TypeScript"></i>
+        <i class="skill devicon-react-original colored tooltip" title="ReactJS"></i>
+        <i class="skill devicon-nodejs-plain colored tooltip" title="NodeJS"></i>
+        <i class="skill devicon-html5-plain colored tooltip" title="HTML"></i>
+        <i class="skill devicon-css3-plain colored tooltip" title="CSS"></i>
+        <i class="skill devicon-java-plain colored tooltip" title="Java"></i>
+        <i class="skill devicon-c-plain colored tooltip" title="C"></i>
+        <i class="skill devicon-python-plain colored tooltip" title="Python"></i>
       </div>
 
-      <a href="#work" class="btn">My Work</a>
-    </section>
-
-    <!-- about me -->
-    <section class="about-me" id="about">
-      <h2 class="section-title section-title-about">About Me</h2>
-      <p class="section-subtitle section-subtitle-about">Placeholder Text</p>
-
-      <div class="about-me-body">
-        <p>I am a recent computer science graduate who is passionate about software engineering and fullstack web development</p>
-        <p>Placeholder text</p>
-      </div>
-      <img src="img/my-face.jpg" alt="" class="about-me-img">
     </section>
 
     <!-- my work -->
@@ -119,7 +112,6 @@
             </div>
           </div>
         </div>
-
 
         <div class="portfolio-item">
           <img src="img/hamming-viz2.jpg" alt="" class="portfolio-img">

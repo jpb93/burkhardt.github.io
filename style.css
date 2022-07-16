@@ -267,7 +267,7 @@ header {
   }
 }
 
-.my-services {
+.my-skills {
   background-color: var(--clr-dark);
   background-image: url(../img/central-PA.png);
   background-size: cover;
@@ -276,12 +276,12 @@ header {
   text-align: center;
 }
 
-.section-title-services {
+.section-title-skills {
   color: var(--clr-accent);
   position: relative;
 }
 
-.section-title-services::after {
+.section-title-skills::after {
   content: '';
   display: block;
   width: 2em;
@@ -291,17 +291,18 @@ header {
   opacity: 0.25;
 }
 
-.services {
+.skills {
   margin-bottom: 4em;
 }
 
-.service {
-  max-width: 500px;
+.skill {
+  font-size: 4em;
   margin: 0 auto;
 }
 
+
 @media (min-width: 800px) {
-  .services {
+  .skills {
     display: flex;
     max-width: 1000px;
     margin-left: auto;
